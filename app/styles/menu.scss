@@ -1,0 +1,37 @@
+
+.box-container {
+  background: #F4F4F4;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  min-width: 150px;
+  max-height: 190px;
+
+  div {
+    display: block;
+    text-align:center;
+  }
+
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+.md-toolbar-tools .mainMenuItem{
+  margin-right:10px;
+  width:76px;
+  a {
+    text-decorations:none; color:inherit;cursor:pointer !important;
+  }
+  a:hover span
+  {
+    color: white !important;
+    cursor:pointer !important;
+    text-decorations:none; color:inherit;cursor:pointer !important;
+  }
+  .menu-link{
+    font-size:12px !important;
+  }
+}

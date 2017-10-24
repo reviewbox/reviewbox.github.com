@@ -1,0 +1,104 @@
+.comicLogo{
+  width: 80%;
+  header {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+  }
+  header > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  header > h2 {
+
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: bold;
+    letter-spacing: 2.25px;
+    color: #8C8CD0;
+    text-shadow: -2.5px 0 black, 2.5px 0 black, 0 2.5px black, 0 -2.5px black, -2.5px 2.5px black, 2.5px 2.5px black, 2.5px -2.5px black, -2.5px -2.5px black;
+    -webkit-transform: translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    transform: translateY(-50px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    font-size: 80px;
+    text-transform: uppercase;
+  }
+  header > h3 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: bold;
+    letter-spacing: 2.25px;
+    color: white;
+    text-shadow: -2.5px 0 black, 2.5px 0 black, 0 2.5px black, 0 -2.5px black, -2.5px 2.5px black, 2.5px 2.5px black, 2.5px -2.5px black, -2.5px -2.5px black, -5px 3.75px black, -3.75px 5px black, -5px 5px black, -3.75px 3.75px black;
+    -webkit-transform: translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg) translate(-130px, -60px);
+    transform: translateY(-50px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg) translate(-130px, -60px);
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+  header > h1 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: bold;
+    letter-spacing: 2.25px;
+    color: white;
+    text-shadow: -2.5px 0 black, 2.5px 0 black, 0 2.5px black, 0 -2.5px black, -2.5px 2.5px black, 2.5px 2.5px black, 2.5px -2.5px black, -2.5px -2.5px black, -5px 3.75px black, -3.75px 5px black, -5px 5px black, -3.75px 3.75px black;
+    -webkit-transform: translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg) scale(1.2, 0.9) translate(100px, 80px);
+    transform: translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg) scale(1.2, 0.9) translate(100px, 80px);
+    font-size: 100px;
+    text-transform: uppercase;
+  }
+  header h3 + hr {
+    border: 2.5px solid black;
+    border-left: 0;
+    border-right: 0;
+    position: absolute;
+    width: 105%;
+    height: 5px;
+    border-bottom-width: 2.5px;
+    -webkit-transform: translateY(-45px) translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    transform: translateY(-45px) translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: bold;
+    letter-spacing: 2.25px;
+    color: white;
+    text-shadow: -2.5px 0 black, 2.5px 0 black, 0 2.5px black, 0 -2.5px black, -2.5px 2.5px black, 2.5px 2.5px black, 2.5px -2.5px black, -2.5px -2.5px black;
+  }
+  header h2 + hr {
+    border: 2.5px solid black;
+    border-left: 0;
+    border-right: 0;
+    position: absolute;
+    width: 105%;
+    height: 10px;
+    border-bottom-width: 5px;
+    -webkit-transform: translateY(35px) translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    transform: translateY(35px) translateY(-30px) translate(-50%, -50%) skewY(-10deg) skewX(-10deg);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: bold;
+    letter-spacing: 2.25px;
+    color: white;
+    text-shadow: -2.5px 0 black, 2.5px 0 black, 0 2.5px black, 0 -2.5px black, -2.5px 2.5px black, 2.5px 2.5px black, 2.5px -2.5px black, -2.5px -2.5px black;
+  }
+  header .issue {
+    font-size: 22px;
+    font-weight: 800;
+    border: black solid 2.5px;
+    border-radius: 50%;
+    padding: 10px;
+    -webkit-transform: translate(180px, 0);
+    transform: translate(180px, 0);
+  }
+  :root {
+    font-family: "Open Sans";
+  }
+  .issue_title {
+    font-weight: 800;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 0.5em;
+  }
+  .author,
+  .illustrator {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+}

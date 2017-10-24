@@ -1,0 +1,36 @@
+$desktop: "(min-width: 1024px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$cell: "(min-width: 200px) and (max-width: 767px)";
+
+.slideTopMenu {
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  height: 400px;
+  overflow-y: hidden;
+}
+
+.slideTopMenu > .pictureIn {
+  width: 2065px;
+  display: inline-block;
+
+  /* for IE6/7, remove if you don't need to support those browsers */
+  *display: inline;
+  zoom: 1
+}
+.pictureIn-andis {
+  /*background: url('https://res.cloudinary.com/dbfirebase/image/upload/v1437601072/ddcl31taj1lsyzv5nkh1.jpg') center top no-repeat;*/
+  //background: url('../dImages/logo/carrot.png') no-repeat 50% 50%;
+  height: 100%;
+  background-size: cover;
+  background-color: #f3f3f3;
+}
+
+/**** Mobile layout ****/
+@media #{$cell} {
+  .slideTopMenu {
+    height: 319px;
+  }
+}
+
+

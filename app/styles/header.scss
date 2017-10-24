@@ -1,0 +1,114 @@
+$borderColor: #fff;
+$borderStyle: solid;
+$borderWidth: .3rem;
+$borderExtend: 3rem;
+/* width + extend */
+$borderOffset: 3.3rem;
+
+//html {
+//  box-sizing: border-box;
+//  //font-size: 62.5%;
+//}
+
+//* {
+//  position: relative;
+//}
+//
+//*:before, *:after {
+//  content: '';
+//  position: absolute;
+//  box-sizing: inherit;
+//}
+
+.header-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-main-img1{
+  background: #222 url('http://res.cloudinary.com/dbfirebase/image/upload/v1437369301/img_5045_dpgr30.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.header-main-img2{
+  background: #222 url('http://res.cloudinary.com/dbfirebase/image/upload/v1437368967/IMG_3838_e5ypss.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.header-main-img3{
+  background: #222 url('http://res.cloudinary.com/dbfirebase/image/upload/v1437369152/Food_IMG2666b-1920x1276_Carolin-Weinkopf-1920x1276_qwbb8i.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+.header-main h1 {
+  width: auto;
+  background-color: rgba(0,0,0,0.5);
+  background-image: url('http://res.cloudinary.com/dbfirebase/image/upload/v1436910179/knrqmnkc5lhfzbtdeast.jpg');
+  background-position: -9999px center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: $borderColor $borderStyle $borderWidth;
+  font-family: 'grandma';
+  font-size: 10vw;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+  &:before,
+  &:after {
+    width: $borderExtend;
+    height: $borderExtend;
+    top: -$borderOffset;
+    border-color: $borderColor;
+    border-width: $borderWidth;
+    border-bottom-style: $borderStyle;
+  }
+
+  &:before {
+    left: -$borderOffset;
+    border-right-style: $borderStyle;
+  }
+
+  &:after {
+    right: -$borderOffset;
+    border-left-style: $borderStyle;
+  }
+
+  &:hover {
+    background-position: center center;
+  }
+}
+
+.header-main a {
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  padding: 4rem 6rem;
+
+  &:before,
+  &:after {
+    width: $borderExtend;
+    height: $borderExtend;
+    bottom: -$borderOffset;
+    border-color: $borderColor;
+    border-width: $borderWidth;
+    border-top-style: $borderStyle;
+  }
+
+  &:before {
+    left: -$borderOffset;
+    border-right-style: $borderStyle;
+  }
+
+  &:after {
+    right: -$borderOffset;
+    border-left-style: $borderStyle;
+  }
+}

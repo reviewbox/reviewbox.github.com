@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/menu.css">
+  <link rel="stylesheet" href="styles/avatar.css">
+  <link rel="stylesheet" href="styles/wordGame.css">
+  <link rel="stylesheet" href="styles/svgMenu.css">
+  <link rel="stylesheet" href="styles/cook.css">
+  <link rel="stylesheet" href="styles/aboutMe.css">
+  <link rel="stylesheet" href="styles/imageUploader.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/slideTopMenu.css">
+  <link rel="stylesheet" href="styles/ilbeViewerDirective.css">
+  <link rel="stylesheet" href="styles/wordBox.css">
+  <link rel="stylesheet" href="styles/quotelist.css">
+  <link rel="stylesheet" href="styles/bollun.css">
+  <link rel="stylesheet" href="styles/progressBar.css">
+  <link rel="stylesheet" href="styles/selectProduct.css">
+
+  <!-- endbuild -->
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel='stylesheet' href='bower_components/angular-material/angular-material.css' />
+  <link rel='stylesheet' href='bower_components/angular-ui-grid/ui-grid.css' />
+  <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css' />
+  <link rel='stylesheet' href='bower_components/material-design-lite/material.min.css' />
+  <link rel='stylesheet' href='bower_components/medium-editor/dist/css/medium-editor.css' />
+  <link rel='stylesheet' href='bower_components/medium-editor/dist/css/themes/default.css' />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body ng-app="reviewboxApp" ng-cloak>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ng-controller="SidenavCtrl" ng-cloak layout="column" style="height:100%" layout="start stretch">
+
+  <section ng-cloak layout="row" flex class="ng-cloak" layout-align="start stretch">
+    <md-sidenav  class="md-sidenav-left md-whiteframe-z2"
+                 md-component-id="left" ng-cloak>
+
+
+      <md-toolbar ng-cloak class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">메뉴</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftsidectrlCtrl">
+        <md-button ng-click="close()" class="md-primary">
+          메뉴닫기
+        </md-button>
+        <div layout="column" layout-align="start start">
+          <a ng-click="close('/cook/recipes')" class="mainMenuItem menu-link"
+             style="text-align:center; cursor: pointer; font-weight: 900;">
+            레시피
+          </a>
+          <a ng-click="close('/quote')" class="mainMenuItem"
+             style="text-align:center; cursor: pointer;font-weight: 900;">
+            컴퓨터 견적
+          </a>
+          <a ng-click="close('/part-tool')" class="mainMenuItem"
+             style="text-align:center; cursor: pointer;font-weight: 900;">
+            컴퓨터파트 관리자화면
+          </a>
+          <a ng-click="close('/cook/alliences')" class="mainMenuItem" style="text-align:center; cursor: pointer; font-weight: 900;">요리 기구</a>
+
+          <a ng-click="close('/cook/places')" class="mainMenuItem" style="text-align:center; cursor: pointer; font-weight: 900;">맛집</a>
+          <a ng-click="close('/cook/cookbang')" class="mainMenuItem" style="text-align:center; cursor: pointer; font-weight: 900;">요리 TV</a>
+          <a ng-click="close('/login')" class="mainMenuItem" style="text-align:center; cursor: pointer; font-weight: 900;">로그인</a>
+        </div>
+      </md-content>
+    </md-sidenav>
+
+    <md-content flex layout="column">
+      <md-toolbar class="ng-cloak" sticky>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
+            <md-icon md-svg-icon="dImages/svg/menu.svg"></md-icon>
+          </md-button>
+          <span hide-gt-xs flex></span>
+          <h2>
+            <a href="#/"><span hide-xs><b>견적</b></span></a>
+            <a href="#/"><span hide-gt-xs><md-icon md-svg-icon="dImages/svg/menuLogo.svg"
+                                    style="width:42px; height:auto;"></md-icon></span></a>
+          </h2>
+          <span  flex></span>
+          <a class="mainMenuItem" href="#/cook/recipes" hide-xs style="text-align:center; cursor: pointer; font-weight: 900;"> Account </a>
+          <!--<a class="mainMenuItem" href="#/cook/alliences" hide-sm style="text-align:center; cursor: pointer;font-weight: 900;"> 요리도구 </a>-->
+          <!--<a class="mainMenuItem" href="#/cook/places" hide-sm style="text-align:center; cursor: pointer; font-weight: 900;">맛집</a>-->
+          <!--<a class="mainMenuItem" href="#/cook/cookbang" hide-sm style="text-align:center; cursor: pointer; font-weight: 900;">요리 TV</a>-->
+          <!--<a ng-hide-auth class="mainMenuItem" href="#/login" hide-sm style="text-align:center; cursor: pointer; font-weight: 900;">로그인</a>-->
+          <!--<a ng-show-auth class="mainMenuItem" href="#/account" hide-sm style="text-align:center; cursor: pointer; font-weight: 900;">설정</a>-->
+
+          <!--<a class="mainMenuItem" href="#/about" hide-sm style="text-align:center; cursor: pointer; font-weight: 900;">개발모드</a>-->
+
+          <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="dImages/svg/favorite.svg" style="color: #ff653a;"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-content ng-view="" flex>
+      </md-content>
+    </md-content>
+  </section>
+
+</div>
+
+<!--<div class="footer">-->
+  <!--<div class="container">-->
+    <!--<div layout layout-sm="column" layout-align="space-around center">-->
+      <!--<h1 class="md-title"><a class="mainMenuItem" href="#/">Home</a></h1>-->
+      <!--<h1 class="md-title"><a class="mainMenuItem" href="#/">레시피</a></h1>-->
+      <!--<h1 class="md-title"><a class="mainMenuItem" href="#/">요리도구</a></h1>-->
+      <!--<h1 class="md-title"><a class="mainMenuItem" href="#/">맛집</a></h1>-->
+      <!--<h1 class="md-title"><a class="mainMenuItem" href="#/">요리티</a></h1>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+            (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+          r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+  }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+<script src="bower_components/rangy/rangy-core.js"></script>
+<script src="bower_components/rangy/rangy-classapplier.js"></script>
+<script src="bower_components/rangy/rangy-highlighter.js"></script>
+<script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="bower_components/rangy/rangy-serializer.js"></script>
+<script src="bower_components/rangy/rangy-textrange.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="bower_components/cloudinary_js/js/jquery.cloudinary.js"></script>
+<script src="bower_components/cloudinary_ng/js/angular.cloudinary.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/material-design-lite/material.min.js"></script>
+<script src="bower_components/medium-editor/dist/js/medium-editor.js"></script>
+<script src="bower_components/moltin/dist/moltin.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="widget/cloudinary_js/js/canvas-to-blob.min.js"></script>
+<script src="widget/cloudinary_js/js/jquery.cloudinary.js"></script>
+<script src="widget/cloudinary_js/js/load-image.min.js"></script>
+<script src="widget/j.widget.js"></script>
+<script src="widget/cloudinary_ng/js/angular.cloudinary.js"></script>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+
+<script src="scripts/app.js"></script>
+
+
+<script src="scripts/angularfire/firebase.ref.js"></script>
+<script src="scripts/angularfire/auth.js"></script>
+<script src="scripts/angularfire/config.js"></script>
+<script src="scripts/config.js"></script>
+
+<script src="scripts/controllers/main.js"></script>
+
+
+<script src="scripts/controllers/chat.js"></script>
+<script src="scripts/filters/reverse.js"></script>
+
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/account.js"></script>
+<script src="scripts/directives/ngShowAuth.js"></script>
+<script src="scripts/directives/ngHideAuth.js"></script>
+<script src="scripts/routes.js"></script>
+<script src="scripts/services/getstoreaccess.js"></script>
+<script src="scripts/controllers/letter.js"></script>
+<script src="scripts/controllers/blog.js"></script>
+<script src="scripts/controllers/gskb.js"></script>
+<script src="scripts/controllers/cook.js"></script>
+<script src="scripts/controllers/computer.js"></script>
+<script src="scripts/services/gskbfactory.js"></script>
+<script src="scripts/services/gskbprovider.js"></script>
+<script src="scripts/services/FactoryTest.js"></script>
+<script src="scripts/controllers/aboutme.js"></script>
+<script src="scripts/services/cookboard.js"></script>
+<script src="scripts/services/album.js"></script>
+<script src="scripts/services/firebaseauth.js"></script>
+<script src="scripts/controllers/tutorial.js"></script>
+<script src="scripts/controllers/readarticle.js"></script>
+<script src="scripts/controllers/recipes.js"></script>
+<script src="scripts/controllers/places.js"></script>
+<script src="scripts/controllers/cookbang.js"></script>
+<script src="scripts/controllers/sidenav.js"></script>
+<script src="scripts/controllers/leftside.js"></script>
+<script src="scripts/directives/texteditor.js"></script>
+<script src="scripts/directives/recipeadd.js"></script>
+<script src="scripts/services/firebaseRefFactory.js"></script>
+<script src="scripts/directives/commentform.js"></script>
+<script src="scripts/controllers/recipecontent.js"></script>
+<script src="scripts/controllers/testroute.js"></script>
+<script src="scripts/directives/testdirective.js"></script>
+<script src="scripts/directives/slidetopmenu.js"></script>
+<script src="scripts/directives/boardsum.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/intro.js"></script>
+<script src="scripts/controllers/editor-test.js"></script>
+<script src="scripts/directives/ilbeViewer.js"></script>
+<script src="scripts/controllers/wordbox.js"></script>
+<script src="scripts/controllers/quote.js"></script>
+<script src="scripts/controllers/quotelist.js"></script>
+<script src="scripts/controllers/part-tool.js"></script>
+<script src="scripts/controllers/selectproduct.js"></script>
+<script src="scripts/controllers/prd-detail.js"></script>
+<script src="scripts/directives/quiz.js"></script>
+<script src="scripts/services/quizservice.js"></script>
+<script src="scripts/controllers/boxes.js"></script>
+<script src="scripts/directives/carts.js"></script>
+<script src="scripts/services/cartservice.js"></script>
+<script src="scripts/filters/logosvgurl.js"></script>
+<!-- endbuild -->
+
+<script src="3rd/ani/minified/TweenMax.min.js"></script>
+<script src="3rd/ani/minified/utils/Draggable.min.js"></script>
+<script src="3rd/ani/minified/plugins/ThrowPropsPlugin.min.js"></script>
+<script src="3rd/ani/minified/utils/SplitText.min.js"></script>
+<script src="3rd/ani/minified/plugins/MorphSVGPlugin.min.js"></script>
+<script src="3rd/ani/minified/plugins/DrawSVGPlugin.min.js"></script>
+</body>
+</html>

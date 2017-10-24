@@ -1,0 +1,93 @@
+$mainWordColor: white;
+$mainDescColor: white;
+
+html, body{
+  height:100%;
+}
+ul
+{
+  list-style-type: none;
+}
+
+.part-tool md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1; }
+.part-tool md-tabs md-tabs-wrapper {
+  background: white; }
+
+.progressBox{
+  //position:absolute;
+  background-color: rgba(90, 75, 75, 0.21);
+  width:200px;
+  height:100%;
+}
+
+.wordBox{
+  font-family: Lato;
+  background-color: #c3dfef;
+  position: absolute;
+  height:100%;
+  width: 100%;
+  z-index:9;
+
+}
+
+.coverPicture{
+  z-index:1;
+  font-family: Lato;
+  background-color: #c3dfef;
+  position: absolute;
+  height:100%;
+  width: 100%;
+}
+
+.coverPicture:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+  background-image: url(http://wallpaperizm.com/wp-content/uploads/2016/01/other-computer-intel-cpu-performance-motherboard-processor-desktop-backgrounds-1920x1080.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.answerBox{
+  text-align: center;
+  margin:30px;
+  color: $mainDescColor;
+}
+
+.quizBox{
+  position: relative;
+}
+
+.mainWord{
+  font-size: 40px;
+  text-align: center;
+  margin:10px;
+  color: $mainWordColor;
+
+}
+.mainDesc{
+  font-size: 20px;
+  text-align: center;
+  margin:30px;
+  color: $mainDescColor;
+}
+
+.nextBtn{
+  font-size:12px;
+  position: absolute !important;
+  bottom: 10px;
+  right: 20px;
+}

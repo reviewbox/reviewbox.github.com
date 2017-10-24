@@ -1,0 +1,36 @@
+
+<md-content>
+    <section class="viewer-header">
+        <h3 class="md-title viewer-header-title">{{cnt.title}}</h3>
+        <span class="md-caption"> 조회수: {{cnt.visitNum}} </span>
+        <span class="md-caption"> 추천수: 0</span>
+    </section>
+
+    <md-content class="viewer-body">
+        <!-- User Info -->
+        <md-list>
+            <md-list-item class="md-2-line" style="padding-left:5px;">
+                <img ng-src="{{author.profileImage}}" class="md-avatar" />
+                <div class="md-list-item-text" layout="column">
+                    <h3>웹아재</h3>
+                    <div>
+                        <sapn class="md-caption">2 days ago</sapn>
+                        <span> . </span>
+                        <span class="md-caption">8 min read</span>
+                    </div>
+                </div>
+                <md-button class="md-fab md-primary">
+                    <md-icon md-svg-src="dImages/svg/favorite.svg"></md-icon>
+                </md-button>
+            </md-list-item>
+        </md-list>
+        <hr/>
+        <div  class="textAngularContent" style="background-color:white; padding: 20px;" ta-bind ng-model="cnt.text"></div>
+        <div class="viewer=cmt-container">
+            <div layout="row" layout-align="center center">
+                <md-button class="md-raised md-primary" ng-click="like()"> 좋아요 </md-button>
+                <md-button class="md-raised md-warn" ng-click="unlike()"> 싫어요 </md-button>
+            </div>
+        </div>
+    </md-content>
+</md-content>

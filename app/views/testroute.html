@@ -1,0 +1,15 @@
+<div ng-hide="visible">
+    <h2 class="md-title">Factory Test</h2>
+    <div ng-repeat="ele in awesomeThings"> {{ele}} </div>
+    <h2 class="md-title">{{facVar}}</h2>
+</div>
+<md-button class="md-raised md-primary" ng-click="changeVar()"> Change Variable </md-button>
+<md-button class="md-raised md-primary" ng-click="visible = !visible"> Change Variable </md-button>
+
+
+<hr>
+
+<test-directive>
+    <h1>Hello world</h1>
+    <div class="md-caption"> Description : bla bla bla bla</div>
+</test-directive>

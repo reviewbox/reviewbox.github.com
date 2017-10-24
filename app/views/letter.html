@@ -1,0 +1,55 @@
+
+
+<!--<div class="page-wrap">-->
+    <!--<h1 class="md-title">DD</h1>-->
+<!--</div>-->
+
+<div class="wordContainer" layout="column" layout-align="center center">
+    <div flex class="md-title">{{title}}</div>
+    <h3  flex class="md-body-1">준비된 문제수: {{problemSet.length}}</h3>
+
+    <md-card ng-show="readyWord" style="min-width:280px;" class="ng-cloak quiz" flex>
+        <md-card-content>
+            <h2 class="md-title">{{crntSet.problem}}</h2>
+            <p>
+                정답을 눌러주세
+            </p>
+        </md-card-content>
+        <div layout="row" layout-align="center center">
+            <md-progress-circular md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>
+        </div>
+        <div style="padding:5px;" class="md-actions" layout="row" layout-sm="column" layout-align="end center">
+            <md-button class="md-primary md-raised" ng-repeat="option in crntSet.options" ng-click="checkAnswer($index, crntSet.answer, crntSet)">{{option}}</md-button>
+        </div>
+    </md-card>
+
+    <div class="md-actions" layout="row" layout-align="end center">
+        <md-button class="md-warn">Skip</md-button>
+        <md-button ng-click="next()" class="md-primary">See Answer</md-button>
+    </div>
+    <h3 class="md-title">{{status}}</h3>
+    <div>status bar</div>
+</div>
+
+<pre>{{words}}</pre>
+<!--<pre>{{problemSet}}</pre>-->
+
+<div class="bgWordQuiz">
+    <h1 class="md-title"> Widget 1 </h1>
+    <div class="ng-cloak" layout="row" layout-align="center center">
+        <div class="containerWidget">
+            <img ng-src="dImages/widgetBg.png">
+            <div class="bgImageTitle">
+                <h1 class="md-title">Word</h1>
+                <p class="md-body-1">def</p>
+            </div>
+            <md-icon class="shareIcon" md-svg-src="dImages/share.svg"></md-icon>
+            <div class="widgetMenu" layout="row" layout-align="space-between center">
+                <div><md-icon class="svgIcon_65" md-svg-src="dImages/fire.svg"></md-icon> 123</div>
+                <div>Share</div>
+                <div><md-icon class="svgIcon_65" md-svg-src="dImages/comment.svg"></md-icon> 10</div>
+            </div>
+        </div>
+    </div>
+</div>
+

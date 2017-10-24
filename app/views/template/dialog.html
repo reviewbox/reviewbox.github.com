@@ -1,0 +1,42 @@
+<style>
+    @media screen and (max-width: 760px){
+
+        .fullscreen-dialog {
+            height:100%;
+            width:100%;
+            max-height:100%;
+            max-width: 100%;
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            border-radius: 0;
+        }
+    }
+</style>
+<md-dialog class="fullscreen-dialog">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>래시피 적기</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                    <md-icon md-svg-src="dImages/svg/close.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div style="padding:10px;">
+                <form ng-submit="addRecipes()">
+                    <md-input-container>
+                        <label>Title</label>
+                        <input ng-model="textAngularCnt.title">
+                    </md-input-container>
+                    <text-angular ng-model="textAngularCnt.text"></text-angular>
+                    <hr/>
+                    <md-button class="md-raised md-primary" type="submit" ng-click="addRecipes()">Add Recipe</md-button>
+                </form>
+            </div>
+        </md-dialog-content >
+    </form>
+</md-dialog>

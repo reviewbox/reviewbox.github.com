@@ -1,0 +1,7 @@
+[
+  {
+    "title": "Parts",
+    "searchTitle": "\n            \n            Search Power Supplies: \n          ",
+    "links": "\n              <thead>\n                <tr>\n                  <th></th>\n                  <th style=\"\">Power Supply</th><th style=\"\">Series</th><th style=\"white-space:nowrap;\">Form</th><th style=\"white-space:nowrap;\">Efficiency</th><th style=\"text-align:right;\">Watts</th><th style=\"text-align:right;\">Modular</th>\n                  <th>Rating</th>\n                  <th>Combo</th>\n                  <th>Price</th>\n                  <th></th>\n                </tr>\n              </thead>\n              <tbody id=\"category_content\">\n              </tbody>\n            "
+  }
+]

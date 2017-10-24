@@ -1,0 +1,23 @@
+.viewer-header{
+  padding: 5px;
+  margin-left:5px;
+  margin-right:5px;
+  .viewer-header-title{
+    padding:0px; margin:0px;
+  }
+}
+.viewer-body{
+  outline: 0;
+  word-break: break-word;
+  word-wrap: break-word;
+
+  padding: 5px;
+  margin-left:5px;
+  margin-right:5px;
+  position:relative;
+  right: 0%;
+  transition: right 200ms;
+}
+
+.viewer-img-container{position: relative; height:300px; width: 100%; margin: 0 auto; display: block;}
+.viewer-cmt-container{position: relative; width: 100%; margin: 0 auto; display: block;}

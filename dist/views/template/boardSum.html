@@ -1,0 +1,13 @@
+<div> <style>tr{
+            outline:none;
+        }
+        .commented{
+            border-left: 5px solid rgb(66, 204, 66);
+        }
+        .non-commented{
+            border-left: 5px solid rgb(15, 58, 84);
+        }
+        board-sum td{
+            height:32px;
+            padding: 2px;
+        }</style> <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width:100%"> <tbody> <tr class="non-commented" ng-repeat="cnt in list track by $index" style="user-select: none; height:38px" ng-click="clickRow($index)"> <td class="mdl-data-table__cell--non-numeric"> <span class="md-caption">{{cnt.name}}</span>  <td class="md-caption">{{cnt.date | date: 'M/dd'}} <td class="md-caption">{{cnt.likes}}   </table> </div>

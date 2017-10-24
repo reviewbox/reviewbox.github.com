@@ -1,0 +1,352 @@
+
+
+<svg hide-sm class="svgMenu" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="menuCircle">
+  <span id="openMenu"></span>
+  <ul>
+    <li class="liSvg"><a href="#/cook">레시피</a></li>
+    <li class="liSvg"><a href="#/cook">맛집</a></li>
+    <li class="liSvg"><a href="#/cook">길거리</a></li>
+    <li class="liSvg"><a href="#/cook">제빵</a></li>
+    <li class="liSvg"><a href="#/cook">최악</a></li>
+  </ul>
+</div>
+
+<!-- /ENDOF -->
+<div layout="row">
+  <div flex>
+    <div class="jumbotron">
+      <div id="black"></div>
+      <div style="" class="animated fadeInDown">
+        <div class="container">
+          <div class="col-md-12">
+
+            <h1>요리 게시판<br class="visible-lg "/></h1>
+            <hr style="width:25%;text-align:left;margin:30px 0; border:2.5px solid #fff;"/>
+          </div>
+          <div class="col-md-8">
+            <h2 style="text-align:left" class="subtitle">레시피, 맛집을 공유하자</h2>
+            <div layout="row">
+              <div> 레시피
+                맛집
+                길거리 음식점 게시판
+                제빵 게시판
+                최악의 식당 게시판
+                요리 도구 게시판
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <h2 class="md-title">재료태그</h2>
+    <p class="md-body-1">재료 태그를 입력 하실수 있다.</p>
+    <md-chips
+            ng-model="tags"
+            readonly="readonly"
+            placeholder="Enter a tag"
+            delete-button-label="Remove Tag"
+            delete-hint="Press delete to remove tag"
+            secondary-placeholder="+Tag"></md-chips>
+
+    <hr/>
+    <md-content style="height:100%; width:100%;">
+      <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+          <h2>
+            <span>요리도구 Card</span>
+          </h2>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="dImages/svg/favorite.svg" style="color:black;"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-content ng-show="proLineUp" style="background-color: #e1e1e1;">
+
+        <div layout="row" layout-sm="column">
+
+          <md-card flex ng-repeat="pro in proLines">
+            <img style="max-width:200px; height:auto; margin-left: auto; margin-right: auto;" ng-src="{{pro.imagePath}}" class="md-card-image" alt="Washed Out">
+            <md-card-content>
+              <hr style="  border-top: 4px solid #D09191;">
+              <h2 class="md-title">{{pro.name}}</h2>
+              <p>
+                {{pro.desc}}
+              </p>
+            </md-card-content>
+          </md-card>
+
+        </div>
+      </md-content>
+
+
+
+      <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex"> Photo Utility </h2>
+        </div>
+      </md-toolbar>
+
+
+      <div id="direct_upload"
+           ngf-allow-dir="true"
+           ngf-drop-available="dropAvailable"
+
+           ngf-drop
+           ngf-drag-over-class="dragOverClass($event)"
+           ng-model="files"
+           ngf-multiple="true"
+           style="margin:10px;">
+        <h1 class="md-title">Add Photo</h1>
+        <div class="md-body-2">Drag and Drop</div>
+        <p class="md-body-1">You can also drag and drop an image file into the dashed area.</p>
+
+        <form>
+          <md-input-container>
+            <label>Title</label>
+            <input required name="clientName" ng-model="title">
+            <div ng-messages="title.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-button href="#" class="md-raised md-primary" ngf-select ng-multiple="true" title="upload" resetOnClick="true" ng-model="files">Upload</md-button>
+        </form>
+
+        <h2>Status</h2>
+        <div class="file" ng-repeat="file in preview">
+          <h3>{{file.name}}</h3>
+          <div class="status">{{file.status}}</div>
+          <div class="progress-bar">
+            <div class="progress" style="width: {{file.progress}}%" ng-init="progress=0"></div>
+          </div>
+          <div class="form_line">
+            <div class="form_controls">
+              <div class="preview"></div>
+            </div>
+          </div>
+          <div class="info">
+            <table>
+              <tr ng-repeat="(key, value) in file.result">
+                <td> {{key}} </td> <td> {{ value }} </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <h1 class="md-title">Preview Photo</h1>
+
+      <div layout="row">
+        <img ng-repeat="imgFile in preview" ngf-src="imgFile" class="thumb-ng-file">
+      </div>
+      <md-button class="md-raised" ng-click="publish()">Publish</md-button>
+
+      <style>
+        .gray {
+          background: #f5f5f5; }
+        .green {
+          background: #b9f6ca; }
+        .yellow {
+          background: #ffff8d; }
+        .blue {
+          background: #84ffff; }
+        .darkBlue {
+          background: #80d8ff; }
+        .deepBlue {
+          background: #448aff; }
+        .purple {
+          background: #b388ff; }
+        .lightPurple {
+          background: #8c9eff; }
+        .red {
+          background: #ff8a80; }
+        .pink {
+          background: #ff80ab; }
+        md-grid-tile md-grid-tile-footer {
+          background: rgba(0, 0, 0, 0.68);
+          height: 36px; }
+        md-grid-tile-footer figcaption {
+          width: 100%; }
+        md-grid-tile-footer figcaption h3 {
+          margin: 0;
+          font-weight: 700;
+          width: 100%;
+          text-align: center; }
+      </style>
+      <md-grid-list
+              md-cols-sm="1" md-cols-md="3" md-cols-gt-md="5"
+              md-row-height-gt-md="1:1" md-row-height="4:3"
+              md-gutter="8px" md-gutter-gt-sm="4px" >
+        <md-grid-tile ng-repeat="photo in photos"
+                      md-rowspan="1"
+                      md-colspan="1"
+                      md-colspan-sm="1"
+                      ng-class='gray' >
+          <cl-image style="height: 100%; width: auto; padding:3px;" public-id="{{photo.public_id}}" class="inline" crop="fill" quality="60" format="jpg"></cl-image>
+          <md-grid-tile-footer><h3>Product </h3></md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+
+
+      <!-- Image Transformation -->
+      <!--<div class="photos">-->
+        <!--<p ng-if="photos.length === 0 || !photos">No photos were added yet.</p>-->
+        <!--<div style="width:200px;" class="photo" ng-repeat="photo in photos | orderBy:'version':true">-->
+          <!--<h2>{{photo.context.custom.photo}}</h2>-->
+          <!--<a cl-href="{{photo.public_id}}" format="jpg" target="_blank">-->
+            <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" width="200" height="200" crop="scale" quality="70" format="jpg"/>-->
+          <!--</a>-->
+
+          <!--<div class="less_info">-->
+            <!--<button class="toggle_info" style="cursor: true;" ng-click="shown=true" ng-init="shown=false" ng-show="shown === false">Show transformations</button>-->
+          <!--</div>-->
+
+          <!--<div class="more_info" ng-show="shown === true">-->
+            <!--<button class="toggle_info" ng-click="shown=false">Hide transformations</button>-->
+            <!--<table class="thumbnails">-->
+              <!--<tr>-->
+                <!--<td>-->
+                  <!--<div class="thumbnail_holder">-->
+                    <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" crop="fill" height="150" width="150" radius="10" format="jpg"/>-->
+                  <!--</div>-->
+                  <!--<table class="info">-->
+                    <!--<tr><td>crop</td><td>fill</td></tr>-->
+                    <!--<tr><td>width</td><td>150</td></tr>-->
+                    <!--<tr><td>height</td><td>150</td></tr>-->
+                    <!--<tr><td>radius</td><td>10</td></tr>-->
+                  <!--</table>-->
+                  <!--<br/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<div class="thumbnail_holder">-->
+                    <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" crop="scale" height="150" width="150" format="jpg"/>-->
+                  <!--</div>-->
+                  <!--<table class="info">-->
+                    <!--<tr><td>crop</td><td>scale</td></tr>-->
+                    <!--<tr><td>width</td><td>150</td></tr>-->
+                    <!--<tr><td>height</td><td>150</td></tr>-->
+                  <!--</table>-->
+                  <!--<br/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<div class="thumbnail_holder">-->
+                    <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" crop="fit" height="150" width="150" format="jpg"/>-->
+                  <!--</div>-->
+                  <!--<table class="info">-->
+                    <!--<tr><td>crop</td><td>fit</td></tr>-->
+                    <!--<tr><td>width</td><td>150</td></tr>-->
+                    <!--<tr><td>height</td><td>150</td></tr>-->
+                  <!--</table>-->
+                  <!--<br/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<div class="thumbnail_holder">-->
+                    <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" crop="thumb" gravity="face" height="150" width="150" format="jpg"/>-->
+                  <!--</div>-->
+                  <!--<table class="info">-->
+                    <!--<tr><td>crop</td><td>thumb</td></tr>-->
+                    <!--<tr><td>gravity</td><td>face</td></tr>-->
+                    <!--<tr><td>width</td><td>150</td></tr>-->
+                    <!--<tr><td>height</td><td>150</td></tr>-->
+                  <!--</table>-->
+                  <!--<br/>-->
+                <!--</td>-->
+                <!--<td>-->
+                  <!--<div class="thumbnail_holder">-->
+                    <!--<cl-image public-id="{{photo.public_id}}" class="thumbnail inline" angle="20" format="jpg">-->
+                      <!--<cl-transformation height="150" width="150" crop="fill" gravity="north" effect="sepia" radius="20"/>-->
+                    <!--</cl-image>-->
+                  <!--</div>-->
+                  <!--<table class="info">-->
+                    <!--<tr><td>crop</td><td>fill</td></tr>-->
+                    <!--<tr><td>effect</td><td>sepia</td></tr>-->
+                    <!--<tr><td>gravity</td><td>north</td></tr>-->
+                    <!--<tr><td>width</td><td>150</td></tr>-->
+                    <!--<tr><td>height</td><td>150</td></tr>-->
+                    <!--<tr><td>then</td><td></td></tr>-->
+                    <!--<tr><td>angle</td><td>20</td></tr>-->
+                  <!--</table>-->
+                  <!--<br/>-->
+                <!--</td>-->
+              <!--</tr>-->
+            <!--</table>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="note">&ndash;&gt;-->
+        <!--&lt;!&ndash;Take a look at our documentation of <a href="http://cloudinary.com/documentation/image_transformations" target="_blank">Image Transformations</a> for a full list of supported transformations.&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</div>-->
+
+
+
+      <!--<div style="padding:10px">-->
+        <!--<div id="grid1" ui-grid="gridOptions" class="grid"></div>-->
+      <!--</div>-->
+
+      <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex"> 레시피 컨텐츠 </h2>
+        </div>
+      </md-toolbar>
+      <md-content style="background-color: #e1e1e1;">
+        <div style="padding:10px">
+          <h1>Editor</h1>
+          <div class="textAngularEditor" text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled'></div>
+          <h1> 미리보기 </h1>
+          <div class="textAngularContent" style="background-color:white; padding: 20px;" ta-bind ng-model="htmlcontent"></div>
+        </div>
+      </md-content>
+
+      <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex"> 게시판 유틸리티 </h2>
+        </div>
+      </md-toolbar>
+      <md-content style="padding: 20px;">
+        <md-button class="md-warn" ng-click="popupLogin()">Login</md-button>
+        <div layout layout-sm="column" ng-repeat="message in messages">
+          <md-input-container>
+            <input ng-model="message.text" ng-change="messages.$save(message)" aria-label="input+$index">
+          </md-input-container>
+          <md-input-container>
+            <md-button class="md-warn md-raised" ng-click="messages.$remove(message)">Delete Message</md-button>
+          </md-input-container>
+        </div>
+
+
+        <!-- push a new message onto the array -->
+
+        <input ng-model="newMessageText" />
+        <md-button class="md-raised" ng-click="addMessage()">Add Message</md-button>
+
+
+        <div>{{data}}</div>
+        <button ng-click="setDate(book)">update the date</button>
+
+        <h2>Formatted</h2>
+        {{book.title}}<br />
+        {{book.author}}<br />
+        {{book.date|date:"medium"}}<br />
+
+        <h2>Raw</h2>
+        <pre>{{book|json}}</pre>
+
+      </md-content>
+
+    </md-content>
+  </div>
+</div>
+

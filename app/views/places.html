@@ -1,0 +1,63 @@
+<div layout="row">
+    <div flex>
+        <div class="jumbotron">
+            <div id="black"></div>
+            <div style="" class="animated fadeInDown">
+                <div class="container">
+                    <div class="col-md-12">
+
+                        <h1> 맛집 <br class="visible-lg "/></h1>
+                        <hr style="width:25%;text-align:left;margin:30px 0; border:2.5px solid #fff;"/>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 style="text-align:left" class="subtitle"> 맛집 리뷰, 찾아가기 </h2>
+                        <div layout="row">
+                            <div>
+                                맛집 서로 공유합니다.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+        <h2 class="md-flex"> 레시피 컨텐츠 </h2>
+    </div>
+</md-toolbar>
+<md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
+    Custom Dialog
+</md-button>
+
+<h1> 미리보기 </h1>
+
+<div class="textAngularContent" style="background-color:white; padding: 20px;" ta-bind ng-model="htmlcontent"></div>
+
+<div class="lock-size" style="position: fixed; bottom: 10px; right:10px;">
+    <md-fab-speed-dial md-open="demo.isOpen" md-direction="up"
+                       ng-class="'md-fling'">
+        <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab md-warn">
+                <md-tooltip md-direction="left">메뉴</md-tooltip>
+                <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <md-button aria-label="twitter" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left">홈</md-tooltip>
+                <md-icon md-svg-src="img/icons/twitter.svg"></md-icon>
+            </md-button>
+            <md-button aria-label="facebook" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left">글쓰기</md-tooltip>
+                <md-icon md-svg-src="img/icons/facebook.svg"></md-icon>
+            </md-button>
+            <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left">찾기</md-tooltip>
+                <md-icon md-svg-src="img/icons/hangout.svg"></md-icon>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
+</div>

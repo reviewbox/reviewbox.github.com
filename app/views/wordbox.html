@@ -1,0 +1,25 @@
+
+<div class="wordBox">
+    <div class="progressBox" layout="column" layout-align="center center">
+
+    </div>
+
+    <div class="quizBox" layout="column" layout-align="center center">
+        <div class="mainWord">{{test[target].text}}</div>
+        <fieldset class="answerBox">
+            <legend>Options</legend>
+            <div layout="row">
+                <div>1</div>
+                <div>1</div>
+            </div>
+            <div layout="row">
+                <div>1</div>
+                <div>1</div>
+            </div>
+        </fieldset>
+        <div class="mainDesc">{{test[target].mean}}</div>
+    </div>
+
+
+    <md-button class="md-raised nextBtn" ng-click="nextWord()">nextBtn</md-button>
+</div>

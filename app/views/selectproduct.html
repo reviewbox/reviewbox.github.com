@@ -1,0 +1,44 @@
+<div>
+    Product List
+
+    <md-content style="margin-left:2px; margin-right:2px;">
+        <md-grid-list
+                md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                md-row-height-gt-md="1:1" md-row-height="2:2"
+                md-gutter="4px" md-gutter-gt-sm="2px" >
+            <md-grid-tile class="gray" ng-repeat="prd in products"
+                          md-rowspan="1" md-colspan="1" md-colspan-sm="1"
+                          ng-click="goTo(prd.id)"
+            >
+                <img class="m-img" ng-src="{{prd.images[0].url.https}}" style="width:inherit; height: inherit" alt="Washed Out">
+                <md-grid-tile-footer style="background-color: rgba(0, 0, 0, 0.54);">
+                    <h3>{{prd.title}}</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </md-content>
+
+
+    <div ng-repeat="prd in products">
+
+
+        <img class="m-img" ng-src="{{prd.images[0].url.https}}" style="width:300px; height:300px;" alt="Washed Out">
+
+        <md-card>
+
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{prd.title}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div>{{prd.price.value}}</div>
+            <p>{{prd.price.description}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+        </md-card-actions>
+        </md-card>
+    </div>
+</div>

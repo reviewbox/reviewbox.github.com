@@ -1,0 +1,10 @@
+<form name="projectForm" ng-submit="commentPush()">
+    <md-input-container flex>
+        <label>Comment</label>
+        <textarea required name="newComment" ng-model="newComment" columns="1" md-maxlength="150"></textarea>
+        <div ng-messages="projectForm.newComment.$error">
+            <div ng-message="md-maxlength">커멘트는 150자 이상 적으실수 없습니다.</div>
+        </div>
+    </md-input-container>
+    <md-button class="md-raised md-warn" type="submit">커멘트 쓰기</md-button>
+</form>
